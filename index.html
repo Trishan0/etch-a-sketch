@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Etch-A-Sketch</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Etch-A-Sketch</h1>
+    <div class="container">
+      <div class="content">
+        <div class="buttons">
+          <button class="btn" id="black" onclick="changeColor('black')">Black</button>
+          <button class="btn" id="white" onclick="changeColor('white')">Erase</button>
+          <button class="btn" id="gray" onclick="changeColor('gray')">Gray</button>
+          <button class="btn" id="random" onclick="changeColor('random')">Random</button>
+          <button class="btn" id="reset" onclick="reset()">Reset</button>
+        </div>
+        <div class="board"></div>
+        <div class="size-adjust">
+          <label for="size">Size</label>
+          <input
+            type="range"
+            id="size"
+            name="size"
+            min="2"
+            max="100"
+            value="16"
+            step="1"
+            list="markers"
+            onchange="setSize()"
+          />
+          <p>Value :<output id="value"></output></p>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
