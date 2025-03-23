@@ -105,6 +105,18 @@ body {
   .btn#random {background-image: linear-gradient(to right, #FC354C 0%, #0ABFBC  51%, #FC354C  100%)}
   .btn#reset {background-image: linear-gradient(to right, #e52d27 0%, #b31217  51%, #e52d27  100%)}
   
+  .msg {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #555;
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
   /* Media Queries for Responsiveness */
   @media screen and (max-width: 600px) {
     .container {
