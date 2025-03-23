@@ -1,4 +1,5 @@
 let color = 'black';
+let click = true
 
 function populateBoard(size) {
   let board = document.querySelector(".board");
@@ -7,9 +8,11 @@ function populateBoard(size) {
 
   for (let i = 0; i < size * size; i++) {
     let square = document.createElement("div");
-    square.addEventListener('mouseover',colorSquare)
-    square.style.backgroundColor = "white";
-    board.insertAdjacentElement("beforeend", square);
+
+        square.addEventListener('mouseover',colorSquare)
+        square.style.backgroundColor = "white";
+        board.insertAdjacentElement("beforeend", square);
+    
   };
 }
 populateBoard(16);
@@ -29,11 +32,14 @@ input.addEventListener("input", (event) => {
 });
 
 function colorSquare() {
-    if (color === 'random') {
-        this.style.backgroundColor = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`;
-    } else {
-        this.style.backgroundColor = color;
+    if (click){
+        if (color === 'random') {
+            this.style.backgroundColor = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`;
+        } else {
+            this.style.backgroundColor = color;
+        }
     }
+
 }
 
 function changeColor(choice){
@@ -48,3 +54,14 @@ function reset(){
     })
 
 }
+
+document.querySelector('body').addEventListener('click', () => {
+    let msg = document.querySelector('.msg');
+
+    click = !click;
+    if (click) {
+        msg.textContent = "Press left click to stop coloring";
+    } else {
+        msg.textContent = "Press left click to start coloring";
+    }
+});
